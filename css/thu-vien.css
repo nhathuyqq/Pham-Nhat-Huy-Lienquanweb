@@ -1,0 +1,463 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+body
+{
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	color: #666666;
+	margin: 0
+}
+h1,h2,h3,h4
+{
+	 font-family: "Playfair Display", serif;
+	color: #000000
+}
+*{ box-sizing: border-box}
+.row
+{
+	display: flex; /* day cac box ben trong row len canh nhau*/
+	flex-wrap: wrap /*-- khi du 100%, se day box ke theo xuong hang*/
+}
+.container{	width: 100%	}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+[class*="col-"] {
+
+  padding: 15px;
+  /*border: 1px solid red;*/
+}
+
+
+/* vung code cho tablet*/
+@media (min-width:768px){
+	.container{	
+		width: 80%;
+		margin: auto/* de box container nam giua man hinh*/
+	}
+	.col-md-1 {width: 8.33%;}
+.col-md-2 {width: 16.66%;}
+.col-md-3 {width: 25%;}
+.col-md-4 {width: 33.33%;}
+.col-md-5 {width: 41.66%;}
+.col-md-6 {width: 50%;}
+.col-md-7 {width: 58.33%;}
+.col-md-8 {width: 66.66%;}
+.col-md-9 {width: 75%;}
+.col-md-10 {width: 83.33%;}
+.col-md-11 {width: 91.66%;}
+.col-md-12 {width: 100%;}
+	
+}
+/*code cho desktop tu 1024 tro di*/
+@media (min-width:992px){
+	.container{	
+		width: 90%;
+		margin: auto/* de box container nam giua man hinh*/
+	}
+	.col-lg-1 {width: 8.33%;}
+.col-lg-2 {width: 16.66%;}
+.col-lg-3 {width: 25%;}
+.col-lg-4 {width: 33.33%;}
+.col-lg-5 {width: 41.66%;}
+.col-lg-6 {width: 50%;}
+.col-lg-7 {width: 58.33%;}
+.col-lg-8 {width: 66.66%;}
+.col-lg-9 {width: 75%;}
+.col-lg-10 {width: 83.33%;}
+.col-lg-11 {width: 91.66%;}
+.col-lg-12 {width: 100%;}
+}
+nav .container
+{
+	position: relative;
+	
+}
+#btn-toggle
+{
+	position: absolute;
+	right:0; top: 10px;
+	background: none;
+	border: none;
+	cursor:pointer;
+	color:tomato;
+	display: block
+	}
+nav .menu ul
+{ 
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+nav .menu ul li
+{
+	border-bottom: 1px dotted #666
+}
+nav .menu ul li a
+{
+	color: #333; 
+	text-decoration:none;
+	padding:10px 16px ;	
+	display: block
+}
+nav .menu ul li a:hover{
+	background: #9E9E9E;
+}
+nav .icon-menu a
+{
+	padding: 10px; 
+	display: inline-block;
+	text-decoration: none; color: #666
+}
+nav .icon-menu a:hover
+{
+	background: tomato;
+	border-radius: 5px 20px;
+	color: white
+}
+/*nav .menu, nav .icon-menu{ display: none}*/
+
+@media (min-width:992px)
+{
+	#btn-toggle{ display: none}
+	nav .menu, nav .icon-menu{ display: block !important}
+	nav .container, nav .menu ul{
+		display: flex;
+		justify-content: space-between;
+		align-items: center}
+	nav .menu ul li
+	{
+	border-bottom:none;
+	position: relative
+	}
+}
+
+/*-- style cho dropdown menu----*/
+.dropdown-menu {
+    display: none; /* Ẩn menu khi không được kích hoạt */
+    position: absolute; /* Đảm bảo menu nằm trên các phần tử khác */
+    background-color: white; /* Nền trắng cho menu */
+    border: 1px solid #ccc; /* Đường viền cho menu */
+    z-index: 1000; /* Đảm bảo menu ở trên các phần tử khác */
+	transition: all 0.5s; /* Hiệu ứng chuyển động */
+}
+/* Hover dropdown menu */
+nav .menu ul li:hover > .dropdown-menu {
+    top: 100%; /* Đảm bảo menu dropdown xuất hiện dưới menu cha */
+    visibility: visible; /* Hiển thị menu dropdown */
+    opacity: 1; /* Đảm bảo menu dropdown có độ trong suốt */
+}
+
+nav .menu ul li {
+    position: relative; /* Để dropdown có thể định vị chính xác */
+}
+
+
+
+nav .menu .dropdown-menu
+{
+	background: #eee; 
+	display: none
+}
+@media (min-width:992px)
+{
+		nav .menu .dropdown-menu
+	{
+		position: absolute; 
+		left: 0; 
+		top: 250%;
+		flex-direction: column;
+		width: 200px;		
+		border-top: tomato 2px solid;
+		transition: all .5s;
+		visibility: hidden;
+		opacity: 0
+		}
+
+nav .menu ul li:hover >.dropdown-menu
+{
+	top:100%;
+	visibility: visible;
+	opacity: 1
+}
+}
+.banner
+{ 
+	width: 100%;
+	max-height: 800px;
+	background-color: #EFEFEF
+}
+.img-100 
+{ 
+	width: 100%; 
+	height: auto
+}
+.banner .row, .cover .row{
+	align-items:center; 
+	justify-content: space-between
+}
+.text-primary{ color: green}
+.text-light{ color: #fff}
+.flex-nguoc-ngang{
+	flex-direction: row-reverse
+}
+.nav2{ 
+	width: 80%; 
+	background-color: rgba(255,255,255,1);
+	border-radius: 60px; 
+	padding: 10px
+}
+.fixed-top{ position: fixed; left: 10%; top: 15px; z-index: 99999}
+.cover{ position: relative}
+.cover .container
+{
+	width: 80%; margin: auto;
+	position: absolute;
+	top: 20%;
+	left: 10%
+}
+.btn-outline-primary /*box-shadow */
+
+{
+	border: 2px solid #C55459;
+	background-color: transparent;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #fff;
+	cursor: pointer
+}
+.btn-outline-primary:hover
+{
+	background-color: #C55459;
+}
+.btn-primary
+{
+	border: none;
+	background-color: #C55459;
+	border: 2px solid #C55459;
+	padding: 10px 20px;
+	border-radius: 50px;
+	color: #fff;
+	cursor: pointer
+}
+.btn-primary:hover{
+	background-color: #fff;color: #C55459;
+	border: 2px solid #fff;
+}
+
+#about .container {
+    display: flex;
+    justify-content: center;
+}
+
+#about .card {
+    text-align: center;
+}
+
+#about .card img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer Content */
+#footer-content {
+    background-color:lemonchiffon; /* Màu nền cho phần nội dung cuối */
+    padding: 30px 0;
+}
+
+#footer-content .col-md-6 {
+    margin-bottom: 20px;
+}
+
+#footer-content h2 {
+    color:darkblue;
+}
+
+#footer-content p {
+    color:#666666;
+}
+
+
+
+.video-container {
+    display: grid;
+	 flex-direction: column;
+	align-items: center;
+    grid-template-rows: auto;
+    gap: 20px;
+    justify-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Đảm bảo tỷ lệ 16:9 cho video */
+}
+
+/* Đảm bảo video căn giữa trên màn hình nhỏ */
+@media (max-width: 768px) {
+    .video-container {
+    }
+}
+
+
+
+.video-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.video-row iframe {
+    flex: 1;
+    margin: 10px;
+    max-width: 45%; /* Đảm bảo các video không chiếm hơn 50% chiều rộng của hàng */
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .video-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-row iframe {
+        max-width: 100%;
+    }
+}
+.tuong-section {
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Màu nền có thể điều chỉnh */
+}
+
+.tuong-section .card {
+    border: none;
+    transition: transform 0.3s;
+}
+
+.tuong-section .card:hover {
+    transform: scale(1.05); /* Hiệu ứng phóng to khi hover */
+}
+
+.tuong-section img {
+    border-radius: 10px; /* Bo tròn góc ảnh */
+}
+
+
+.tuong-section {
+    background-color: white; /* Màu nền trắng */
+    padding: 20px; /* Khoảng cách bên trong khung */
+    border-radius: 10px; /* Bo góc cho khung */
+    margin-top: 40px; /* Khoảng cách từ phía trên */
+}
+
+.tuong-section h2 {
+    text-align: center; /* Căn giữa tiêu đề */
+    color: #333; /* Màu chữ tối */
+    margin: 20px 0; /* Khoảng cách giữa tiêu đề và các nội dung khác */
+}
+
+
+
+/* Điều chỉnh padding cho container chứa tiêu đề */
+.tuong-section .container {
+    display: flex; /* Sử dụng flex để căn giữa */
+    flex-direction: column; /* Đặt chiều dọc cho các phần tử */
+    align-items: center; /* Căn giữa tất cả các phần tử bên trong */
+}
+
+
+/* Căn chỉnh hàng cho các tướng */
+.row {
+    display: flex;
+    flex-wrap: wrap; /* Đảm bảo các card có thể xuống dòng nếu không đủ chỗ */
+    justify-content: center; /* Căn giữa các card */
+}
+
+/* Thẻ card cho mỗi tướng */
+.card {
+    background: rgba(255, 255, 255, 0.9); /* Nền card sáng với độ trong suốt */
+    border-radius: 15px; /* Bo tròn góc cho card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Đổ bóng cho card */
+    transition: transform 0.3s; /* Hiệu ứng chuyển động khi hover */
+    margin: 15px; /* Thêm khoảng cách giữa các card */
+    max-width: 220px; /* Giới hạn chiều rộng của card */
+    text-align: center; /* Căn giữa chữ trong card */
+}
+
+/* Hiệu ứng hover cho card */
+.card:hover {
+    transform: scale(1.05); /* Phóng to card khi hover */
+}
+
+/* Hình ảnh trong card */
+.card img {
+    border-radius: 15px 15px 0 0; /* Bo tròn góc trên cho hình ảnh */
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng card */
+    height: auto; /* Giữ tỉ lệ hình ảnh */
+    max-height: 300px; /* Giới hạn chiều cao tối đa cho hình ảnh */
+}
+
+/* Phần chữ bên trong card */
+.card-body {
+    padding: 15px; /* Thêm khoảng cách cho phần chữ */
+}
+
+.card-body h5 {
+    font-size: 1.5rem; /* Kích thước chữ cho tên tướng */
+    margin: 0; /* Bỏ khoảng cách mặc định */
+    color: #1e90ff; /* Màu chữ sáng cho dễ đọc */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Đổ bóng nhẹ cho chữ */
+}
+.img-fluid {
+    width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của thẻ card */
+    height: 200px; /* Đặt chiều cao cố định cho hình ảnh */
+    object-fit: cover; /* Cắt hình ảnh để phù hợp với không gian */
+}
+nav.fixed-top.nav2 {
+    width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều ngang */
+    display: flex;
+    justify-content: space-between; /* Cân đều logo, menu và các icon */
+    align-items: center; /* Căn giữa các mục theo chiều dọc */
+}
+
+nav.fixed-top.nav2 .menu ul {
+    display: flex;
+    justify-content: center; /* Căn giữa các mục điều hướng */
+    padding: 0;
+    margin: 0 auto;
+}
+
+nav.fixed-top.nav2 .icon-menu {
+    display: flex;
+    justify-content: flex-end; /* Căn các icon về phía bên phải */
+}
+.tuong-section {
+    text-align: center; /* Căn giữa tiêu đề và nội dung */
+    padding: 40px 0;
+}
+
+.tuong-section .row {
+    display: flex;
+    justify-content: center; /* Căn giữa các thẻ tướng */
+    gap: 20px; /* Khoảng cách giữa các thẻ */
+}
+
+.tuong-section .card {
+    margin: 0 auto; /* Căn giữa mỗi thẻ card */
+}
+
+
